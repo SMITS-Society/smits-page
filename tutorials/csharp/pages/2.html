@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>第二章 Hello World！</title>	
+<style>
+	p{text-indent: 2em;}
+	img{width:auto;height:auto;max-width: 100%;max-height: 100%;}
+	code{font-family: 'Source Code Pro'}
+	</style>
+</head>
+	
+<body>
+	<h1>第二章 Hello World！</h1>
+	<p><i>Hello World在编程界被视为每个程序员学习一门语言后需要编写的第一个程序。因为The C Programming Language中使用它做为第一个演示程序，非常著名，所以后来的程序员在学习编程或进行设备调试时延续了这一习惯。现在，就让我们以Hello World为例，向你讲解第一个C#程序。</i></p>
+	<hr>
+	<h2>2.1 Hello World！</h2>
+	<p>在第一章配置的时候，自动生成了一个Hello World的程序。让我们来看看这个程序：</p>
+	<pre class="HelloWorldCode">&nbsp;
+	<code class="has-numbering" style="position: unset">
+  using System;                                             //a
+  
+  namespace temp{                                           //b
+	  class Program{                                    //c
+		  static void Main(string[] args){          //d
+			  Console.WriteLine("Hello World"); //e
+		  }
+	  }
+  } </code>
+	</pre>
+	<p>首先需要清楚的是，"//"在C#中表示注释，这后面的代码将会被编译器所忽视。"//"有效范围为一行，除此之外还有"/* <i>content</i> */"，被写在中间的代码都将被忽视，可跨行使用。接下来的代码，被注释掉的地方如果有字母，则是会在接下来进行讲解的。<br>C#中使用花括号"{}"来组成一个完整的句段。如果一个句子对一些句子生效，那么这些句子必须被花括号括起来，否则将只会对这些句子中的第一句生效。<br>C#中句子结尾必须打";"花括号后和命名空间、函数、类声明后除外。另外，C#中所有符号必须是英文字符！</p>
+	<p>a. using System;语句告诉编译器，我们将会使用System里面的东西，System是一个命名空间，我们把一些功能放在里面。这个程序中需要用到的输出就在这里面。</p>
+<p>b. 这个句子声明了一个叫做temp的命名空间(namespace)，命名空间的作用是为了防止出现重复的名称(关键字除外）,比如一个maxn,我们不能防止全世界所有的程序只有一个出现了这个名字。而一旦编译器发现有两个maxn,就不知道该如何做。因此，命名空间就被创造了。在两个不同的命名空间中，即使拥有相同的变量名也无妨。但是，在同一个命名空间里出现两个相同名称的变量或函数是不被允许的。(重载除外，我们会在<a href="7.html">后文</a>进行介绍。)</p>
+	
+	<p>c. 这个句子声明了一个类。C#是面对对象编程语言(OOP)，类是用来实现OOP的重要方式。我们将在<a href="8.html">第八章</a>着重讨论它。</p>
+	<p>d. 这个句子声明了主函数(main)。主函数是C#程序的开始，C#程序总是第一个进入主函数，最后退出主函数。</p>
+	<p>e. 这个句子输出字符串Hello World。关于输出，我们马上会重点讨论。</p>
+	<p>现在我们对C#程序有了最基本的了解。我们可以总结出来，一个C#程序由引入，命名空间声明，类声明，一些函数，语句和表达式组成。尽管有一些词语我们仍然不懂，但不要害怕，我们将在后面的学习中慢慢熟悉它们。你现在要做的是记住它们怎么写。</p>
+	<hr>
+	<h2>2.2 输入输出到控制台</h2>
+<ol type="I">
+		<li>输出语句</li>
+		<p><i>1.Console.WriteLine("AString")</i><br>这种方式所输出以后将会自动换行。</p>
+		<p><i>2.Console.Write("AString")</i><br>这种方式输出以后将不会自动换行。</p>
+		<p>输出语句中可以做字符串的相加运算。如:</p>
+		<pre>
+		<code>
+Console.WriteLine("你好，我叫"+name+",我今年"+age+"岁。");
+
+Console.WriteLine("你好，我叫{0},我今年{1}岁。"，name,age);
+		</code>
+		</pre>
+	<p>这使得程序更为灵活，在输入了name和age之后，程序就会以正常的顺序输出它们，假若name="Billy",age="15",程序会输出：<br><i>你好，我叫Billy，我今年15岁。</i></p><p>第二条语句使用了占位符，字符串后面的参数将会按照顺序被放入字符串。按照这里的顺序，name是0，age是1。如果在前面的字符串中先写{1}，后写{0}，程序也会先输出age，再输出name。由此可见，占位符的书写顺序是决定输出顺序的因素，而不是后面的参数的摆放顺序。</p>
+		<li>输入语句</li>
+		<p>同输出语句，输入语句也有Read和ReadLine两种，不同的是，它们分别读取ascii码（或int值）和字符串。(ascii码全称美国信息交换标准代码，为128个字符分别赋上一个值，如'a'是97，'A'是65，'0'是48。想要了解更多可以在网上找到资料，这里不过多介绍)此外，还有ReadKey，这会监听键盘事件，可理解为按任意键执行。</p>
+	</ol>
+	<hr>
+	<h2>2.3 文件输入输出</h2>
+	
+</body>
+</html>
